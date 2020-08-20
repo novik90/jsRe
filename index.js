@@ -9,6 +9,8 @@ app.use(function (req, res) {
 	res.sendFile(__dirname + "/greet.html");
 });
 
+
+// Старый метод отправки
 // app.get('/', (req, res) => {
 // 	res.end(`
 // <div>
