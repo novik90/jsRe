@@ -3,6 +3,8 @@ const app = express()
 
 const PORT = process.env.PORT || 80
 
+var greet = require("./greeting.js");
+
 app.get('/', (req, res) => {
 	res.end(`
 <div>
@@ -13,6 +15,7 @@ app.get('/', (req, res) => {
 		</ul>
 	</nav>
 	<h1>Home page</h1>
+	<p>$(greet.name)</p>
 </div>
 		`)
 })
