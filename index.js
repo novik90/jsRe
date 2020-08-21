@@ -1,43 +1,14 @@
-const express = require('express')
-const app = express()
+var path = require('path');
+const express = require('express');
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const PORT = process.env.PORT || 80
 
-var greet = require("./greeting.js");
-
 app.use(function (req, res) {
-	res.sendFile(__dirname + "/greet.html");
+	res.sendFile(__dirname + "/index.html");
 });
-
-
-// Старый метод отправки
-// app.get('/', (req, res) => {
-// 	res.end(`
-// <div>
-// 	<nav>
-// 		<ul>
-// 			<li><a href="/">Home</a></li>
-// 			<li><a href="/about">About</a></li>
-// 		</ul>
-// 	</nav>
-// 	<h1>Home page</h1>
-// </div>
-// 		`)
-// })
-
-app.get('/about', (req, res) => {
-	res.end(`
-<div>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-		</ul>
-	</nav>
-	<h1>About page</h1>
-</div>
-`)
-})
 
 app.listen(PORT, () => {
 	console.log('Server has been started...')

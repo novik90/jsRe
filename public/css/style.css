@@ -1,0 +1,15 @@
+.container {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.nav li {
+	border: 1px solid #333;
+	display: inline;
+	padding: 12px 22px;
+	font-weight: 800;
+}
+
+.nav li a {
+	text-decoration: none;
+}
